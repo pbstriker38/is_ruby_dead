@@ -45,6 +45,15 @@
         margin: 0;
       }
     </style>
+    <script>
+      function refreshPage () {
+       setTimeout(function () {
+        window.location.reload();
+        refreshPage();
+       }, 30000)
+      }
+      refreshPage();
+    </script>
   </head>
   <body>
     <h1><%= @answer.response %></h1>
