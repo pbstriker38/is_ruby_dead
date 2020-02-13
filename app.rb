@@ -1,4 +1,5 @@
 require 'sinatra'
+require_relative 'giphy_client'
 
 APP_URL = settings.production? ? 'https://is-ruby-dead.herokuapp.com' : 'http://localhost:4567'
 
@@ -9,11 +10,18 @@ BENDER_LAUGH = OpenStruct.new(response: "<img src='#{APP_URL}/bender_laugh.gif'>
 MAYBE = OpenStruct.new(response: '<h1>Maybe 🤷🏻‍♂️</h1>', color: '#d6d016')
 UNLIKELY = OpenStruct.new(response: '<h1>Unlikely 🦄</h1>', color: '#d68916')
 PREPOSTEROUS = OpenStruct.new(response: '<h1>Preposterous 🤨</h1>', color: '#cc4c42')
+
 ANSWERS = [YES_SAD, YES_FACEPALM, NO, MAYBE, BENDER_LAUGH, UNLIKELY, PREPOSTEROUS]
 
 get '/' do
   @app_icon = settings.production? ? "#{APP_URL}/ruby.png" : "#{APP_URL}/ruby.png"
-  @answer = ANSWERS.sample
+
+  random_gif = OpenStruct.new(
+    response: "<img src='#{GiphyClient.random_gif(tag: 'laughing', rating: 'PG-13')}'>",
+    color: '#cc4c42'
+  )
+  @answer = (ANSWERS << random_gif).sample
+
   erb :index
 end
 
