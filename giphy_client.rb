@@ -9,6 +9,6 @@ class GiphyClient
     response = Net::HTTP.get_response(uri)
     return nil unless response.is_a?(Net::HTTPSuccess)
 
-    JSON.parse(response.body).dig('data', 'images', 'fixed_height', 'webp')
+    JSON.parse(response.body).dig('data', 'images', 'fixed_height', 'url')
   end
 end
