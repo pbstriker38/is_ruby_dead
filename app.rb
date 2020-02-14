@@ -16,11 +16,15 @@ ANSWERS = [YES_SAD, YES_FACEPALM, NO, MAYBE, BENDER_LAUGH, UNLIKELY, PREPOSTEROU
 get '/' do
   @app_icon = settings.production? ? "#{APP_URL}/ruby.png" : "#{APP_URL}/ruby.png"
 
-  random_gif = OpenStruct.new(
+  random_laugh_gif = OpenStruct.new(
     response: "<img src='#{GiphyClient.random_gif(tag: 'laughing', rating: 'PG-13')}'>",
     color: '#cc4c42'
   )
-  @answer = (ANSWERS + [random_gif]).sample
+  random_no_gif = OpenStruct.new(
+    response: "<img src='#{GiphyClient.random_gif(tag: 'no', rating: 'PG-13')}'>",
+    color: '#cc4c42'
+  )
+  @answer = (ANSWERS + [random_laugh_gif, random_no_gif]).sample
 
   erb :index
 end
