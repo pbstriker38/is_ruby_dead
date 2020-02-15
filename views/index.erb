@@ -56,6 +56,9 @@
     </script>
   </head>
   <body>
-    <%= @answer.response %>
+    <h1><%= @answer.message %></h1>
+    <% if @answer.image %>
+      <img src='<%= @answer.image %>'>
+    <% end %>
   </body>
 </html>
