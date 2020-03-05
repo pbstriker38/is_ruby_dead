@@ -4,19 +4,19 @@
   <head>
     <meta charset='UTF-8'>
     <meta property='og:type' content='website' />
-    <meta property='og:url' content='https://is-ruby-dead.herokuapp.com/' />
+    <meta property='og:url' content='<%= ENV['APP_URL'] %>' />
     <meta property='og:title' content='Is Ruby Dead?' />
     <meta property='og:description' content="A 'live', up to date look at Ruby's status as a language." />
-    <meta property='og:image' content='https://is-ruby-dead.herokuapp.com/ruby.png' />
+    <meta property='og:image' content='<%= ENV['APP_URL'] %>/ruby.png' />
 
     <meta name='twitter:card' content='summary' />
-    <meta name='twitter:domain' value='is-ruby-dead.herokuapp.com' />
+    <meta name='twitter:domain' value='<%= ENV['APP_DOMAIN'] %>' />
     <meta name='twitter:title' value='Is Ruby Dead?' />
     <meta name='twitter:description' value="A 'live', up to date look at Ruby's status as a language." />
-    <meta name='twitter:image' content='https://is-ruby-dead.herokuapp.com/ruby.png' />
-    <meta name='twitter:url' value='https://is-ruby-dead.herokuapp.com/' />
+    <meta name='twitter:image' content='<%= ENV['APP_URL'] %>/ruby.png' />
+    <meta name='twitter:url' value='<%= ENV['APP_URL'] %>' />
 
-    <link rel='icon' type='image/png' href='<%= @app_icon %>'>
+    <link rel='icon' type='image/png' href='<%= ENV['APP_URL'] %>/ruby.png'>
 
     <title>Is Ruby Dead?</title>
 
