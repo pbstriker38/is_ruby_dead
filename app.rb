@@ -8,5 +8,6 @@ get '/' do
 end
 
 get '/ruby.png' do
+  puts "ruby"
   send_file 'ruby.png'
 end
