@@ -33,6 +33,7 @@ class AnswerRandomizer
       image: GiphyClient.random_gif(tag: 'never', rating: 'PG-13'),
       color: '#cc4c42'
     ) }
+
     @answer = (ANSWERS + [random_laugh_gif, random_no_gif, random_yes_gif, random_never_gif]).sample.call
   end
 end
