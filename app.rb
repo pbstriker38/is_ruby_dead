@@ -6,7 +6,6 @@ get '/' do
   erb :index
 end
 
-
 get '/ruby.png' do
   send_file 'ruby.png'
 end
