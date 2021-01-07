@@ -34,6 +34,7 @@ class AnswerRandomizer
       color: '#cc4c42'
     ) }
 
+    puts "hello"
     @answer = (ANSWERS + [random_laugh_gif, random_no_gif, random_yes_gif, random_never_gif]).sample.call
   end
 end
