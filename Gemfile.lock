@@ -19,13 +19,15 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   puma (~> 4.3)
   sinatra (~> 2.0)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.7.3p183
 
 BUNDLED WITH
    2.1.4
