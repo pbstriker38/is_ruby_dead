@@ -1,6 +1,6 @@
 # Is Ruby Dead?
 
-[Check it out!](https://is-ruby-dead.herokuapp.com/)
+[Check it out!](https://is-ruby-dead.pbstriker38.dev/)
 
 Inspiration taken from https://isrubydead.com/
 
