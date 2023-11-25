@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: is-ruby-dead
+  namespace: default
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: is-ruby-dead.pbstriker38.dev
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: is-ruby-dead
+                port:
+                  number: 80
+            path: /
+  tls:
+    - hosts:
+      - is-ruby-dead.pbstriker38.dev
+      secretName: is-ruby-dead-tls
