@@ -11,4 +11,8 @@ class App < Sinatra::Base
   get '/ruby.png' do
     send_file 'ruby.png'
   end
+
+  get '/github_logo.png' do
+    send_file 'GitHub-Mark-Light-64px.png'
+  end
 end
