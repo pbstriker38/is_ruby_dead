@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+data:
+  APP_ENV: production
+  PORT: "9292"
+  RACK_ENV: production
+  APP_URL: "https://is-ruby-dead.pbstriker38.dev/"
+kind: ConfigMap
+metadata:
+  name: is-ruby-dead
+  namespace: default
