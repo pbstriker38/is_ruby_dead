@@ -2,4 +2,7 @@
 
 require './app'
 
+RubyVM::YJIT.enable
+puts "YJIT enabled: #{RubyVM::YJIT.enabled?}"
+
 run App
