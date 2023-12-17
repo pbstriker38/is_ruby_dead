@@ -3,7 +3,7 @@ ARG GIT_SHA=unspecified
 ARG RACK_ENV=production
 
 # Build image
-FROM ruby:3.2.2-alpine as BUILD_IMAGE
+FROM ruby:3.3.0-rc1-alpine as BUILD_IMAGE
 
 # https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#using-pipes
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
@@ -36,7 +36,7 @@ RUN MAKE="make --jobs $(($(nproc)+1))" bundle install --jobs "$(nproc)" --retry 
 COPY . $APP_HOME
 
 # Final image
-FROM ruby:3.2.2-alpine
+FROM ruby:3.3.0-rc1-alpine
 
 ARG GIT_SHA
 ARG RACK_ENV
